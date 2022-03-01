@@ -1,0 +1,44 @@
+PasswordGenPage:
+    orientation: 'vertical'
+
+    Label:
+        text: "Password Generator"
+        size_hint: (1, .08)
+        font_size: "18dp"
+        pos_hint: {"center_x": .5, "center_y": .95}
+
+    Label:
+        id: password
+        text: root.password_generate
+        font_size: "25dp"
+        halign: "center"
+        size_hint: (1, .1)
+        pos_hint: {"center_x": .5, "center_y": .7}
+
+    Label:
+        id: nbr_chars
+        text: "8"
+        size_hint: (1, .08)
+        pos_hint: {"center_x": .5, "center_y": .4}
+
+    Slider:
+        id: number_chars
+        min:0
+        max:16
+        value:8
+        size_hint: (.9, .1)
+        pos_hint: {"center_x": .5, "center_y": .35}
+        on_value: root.show(number_chars, nbr_chars)
+
+    
+    Button:
+        text:'Generate'
+        size_hint: (.8, .08)
+        pos_hint: {"center_x": .5, "center_y": .1}
+        on_press: root.Generator(number_chars, password)
+
+    Label:
+        text:'Created By Fabio S-line'
+        font_size: "14dp"
+        szie_hint: (1, .08)
+        pos_hint: {"center_x": .5, "center_y": .03}
